@@ -12,13 +12,12 @@ const [inputs,setInputs]=useState({
   description:'',
   price:'',
   author:'',
-  
   image:''
 
 })
 
 
-const [checked,setchecked]=useState(false)
+const [checked,setchecked]=useState(false);
 
 
 
@@ -35,7 +34,7 @@ setInputs((prevState)=>({
 
 
 const sendRequest=async()=>{
-  await axios.post("http://localhost:5000/books",{
+  await axios.post("https://backend-go4k.onrender.com/books",{
   name:String(inputs.name),
   author:String(inputs.author),
   description:String(inputs.description),
@@ -59,7 +58,7 @@ const handleSubmit=(e)=>{
 
   return (
 <form onSubmit={handleSubmit}>
-<Box display="flex" flexDirection="column" justifyContent={'center'} maxWidth={700} alignContent={'center'} alignSelf={'center'} marginLeft={'auto'} marginRight={'auto'} marginTop={10}>
+<Box display="flex" flexDirection="column" justifyContent={'center'} maxWidth={700} alignContent={'center'} alignSelf={'center'} marginLeft={'auto'} marginRight={'auto'} marginTop={5}>
 
 <FormLabel>Name</FormLabel>
 <TextField   value={inputs.name} onChange={handleChange}   margin='normal'  fullWidth variant='outlined' name="name" />
